@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Описание страницы">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/modal_popup.css">
+	<style>
+		body {
+			position: relative;
+			padding: 10px;
+			height: 2000px;
+		}
+		.page-text-content {
+			margin: 20px 0;
+		}
+		span.info {
+			font-weight: bold;
+		}
+	</style>
+	<title>Модальное popup-окно</title>
+</head>
+<body>
+	
+	<button class="show-modal-one">Показать 1 окно</button>
+	<button class="show-modal-two">Показать 2 окно (без кнопок)</button>
+	<button class="show-modal-three">Показать 3 окно (без параметров)</button>
+	<span class="info">Четвертое появится при прокрутке страницы на 500px.</span>
+	<div class="page-text-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et nunc vel enim maximus placerat. Morbi ut arcu condimentum, placerat tortor sit amet, iaculis nulla. Donec convallis leo eu arcu congue luctus. Duis eleifend purus vel dolor imperdiet aliquam. Nullam vulputate ac orci at volutpat. Fusce condimentum orci vel sem rutrum porttitor. Mauris faucibus neque non diam bibendum varius. Nunc quis metus non enim tincidunt dignissim vel non sem.</p>
+		<p>Phasellus dictum lorem ornare fermentum venenatis. Aliquam nec imperdiet libero. Sed vulputate sollicitudin hendrerit. Pellentesque aliquam varius ipsum. Sed venenatis nibh magna, id eleifend odio tincidunt eget. Nunc lobortis commodo eros, ut bibendum odio. Quisque blandit turpis sit amet ex interdum sodales. Vestibulum a tellus congue, pellentesque magna at, fermentum nulla. Ut sit amet orci convallis justo congue ornare tempus et magna. Duis id pretium neque. Morbi libero purus, pulvinar in blandit et, venenatis sed magna. Etiam ante ante, vehicula sed pretium at, porta luctus diam. Suspendisse mollis sapien at erat vestibulum imperdiet. Quisque eget pulvinar nunc, a dignissim justo. Nunc pharetra, enim fringilla laoreet dictum, purus arcu aliquam ex, in fermentum nibh felis nec dui.</p>
+		<p>Sed vestibulum suscipit neque id gravida. Quisque finibus ex sapien, eget tempus mi cursus quis. Ut vestibulum, ex nec viverra condimentum, sapien lectus blandit libero, a ornare lacus mauris elementum erat. Cras auctor ullamcorper lectus, dapibus ultrices elit consequat vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Quisque nibh diam, mollis quis turpis vitae, volutpat egestas metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ut odio vitae massa viverra laoreet. Praesent eleifend massa quis molestie laoreet. Mauris fermentum sem ex, vitae egestas erat viverra et. Proin aliquam felis purus, vitae placerat nunc imperdiet non.</p>
+		<p>Nam posuere accumsan metus sed semper. Nam facilisis nunc vitae mollis tempor. Sed eu nisl ac est cursus gravida. Phasellus varius hendrerit nisl, vel consequat nulla vehicula at. Maecenas sed lorem erat. Duis vitae ultrices ante. Nulla non placerat purus. Pellentesque et laoreet tellus.</p>
+		<p>In ultricies dapibus facilisis. Fusce ultrices felis quis imperdiet tempor. In elementum, turpis ac consequat fermentum, nisi nisl bibendum metus, a aliquam libero leo ut nunc. Pellentesque tristique fringilla mi at cursus. Proin non finibus magna. Nunc lacus ligula, semper eu auctor et, congue eget eros. Morbi placerat malesuada tortor, eget convallis ipsum iaculis in. Mauris quis nunc vestibulum, sollicitudin est ac, ornare ipsum. Morbi luctus turpis ex, in ultricies turpis condimentum eget. Vivamus eleifend ligula a augue interdum pretium.</p>
+		<p>Proin blandit nibh justo, vitae fringilla dolor ultricies a. Fusce massa massa, eleifend non feugiat ac, auctor sit amet quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ornare eros est, ac volutpat justo dictum in. Suspendisse potenti. Mauris nec lorem at ipsum ornare posuere vitae ut diam. Sed eu faucibus massa. Suspendisse nisl odio, pretium congue blandit at, egestas ut nulla. Quisque feugiat ligula eros, tincidunt ultrices turpis consequat ut. Sed finibus lorem a odio fermentum, quis posuere nibh rhoncus.</p>
+	</div> <!-- page-text-content -->
+
+	<script src="js/modal_popup.js"></script>
+	<script>
+		// Тестирование:
+		const showModalOne = document.querySelector(".show-modal-one"),
+					showModalTwo = document.querySelector(".show-modal-two"),
+					showModalThree = document.querySelector(".show-modal-three"),
+
+					// Окно со всеми параметрами, кроме появления при прокрутке:
+					modalOne = ModalPopup({
+						width: 600,
+						header: `Заголовок 1`,
+						content: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et nunc vel enim maximus placerat.</p><p>Phasellus dictum lorem ornare fermentum venenatis.</p><p>Nam posuere accumsan metus sed semper. Nam facilisis nunc vitae mollis tempor.</p>`,
+						buttons: [
+							{ text: "Нажать",  title: "Нажать", handler: () => { alert("Нажал"); } },
+							{ text: "Принять", title: "Принять", action: "accept", handler: () => { alert("Принял"); } },
+							{ text: "Закрыть", title: "Закрыть", action: "close" }
+						],
+					}),
+
+					// Окно без кнопок, кроме появления при прокрутке:
+					modalTwo = ModalPopup({
+						width: 600,
+						header: `Заголовок 2`,
+						content: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et nunc vel enim maximus placerat.</p><p>Phasellus dictum lorem ornare fermentum venenatis.</p><p>Nam posuere accumsan metus sed semper. Nam facilisis nunc vitae mollis tempor.</p>`,
+					}),
+
+					// Окно, созданное без параметров (не появляется при прокрутке):
+					modalThree = ModalPopup(),
+
+					// Окно, которое появится при прокрутке страницы вниз на 500px:
+					modalFour = ModalPopup({
+						header: `Привет!`,
+						content: `<p>Появилось при скролле страницы на указанное расстояние</p>`,
+						scrollable: {
+							appear: true,
+							scrolled: 500,
+						},
+					});
+
+		showModalOne.onclick = modalOne.show;
+		showModalTwo.onclick = modalTwo.show;
+		showModalThree.onclick = modalThree.show;
+		
+	</script>
+</body>
+</html>

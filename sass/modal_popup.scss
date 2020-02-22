@@ -1,0 +1,148 @@
+@import "../css/normalize.css";
+@import "fonts";
+
+.modal-popup {
+	&_wrapper {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 9999;
+		// transition props:
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity .5s ease-in-out;
+		&, * {
+			box-sizing: border-box;
+			font-family: "RobotoRegular", sans-serif;
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&.active {
+			visibility: visible;
+			opacity: 1; // 255, 249, 23
+			.modal-popup_overlay {
+				background-color: rgba(0, 0, 0, .7);
+			}
+			.modal-popup_window {
+				box-shadow: 0 0 10px 3px rgba(186, 186, 184, .7);
+			}
+
+		} // .modal-popup_wrapper .active
+	} // .modal-popup_wrapper
+
+	&_overlay {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		// transition props:
+		transition: background-color 1s ease-in-out;
+		background-color: transparent;
+	} // .modal-popup_overlay
+
+	&_window {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		background: #fff;
+		border-radius: 5px;
+		// transition props:
+		box-shadow: none;
+		transition: box-shadow .5s ease 1s;
+		> div {
+			position: relative;
+			padding: 10px 15px;
+		}
+		.close-icon {
+			position: absolute;
+			z-index: 1;
+			top: 6px;
+			right: 10px;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			&::before {
+				content: "\2716";
+			}
+		}
+		.popup-window {
+			&_header, &_content {
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 1px;
+					background: #000;
+				}
+			}
+			&_header {
+				padding-right: 30px;
+				h1, h2, h3, h4, h5, h6 {
+					margin: 0;
+				}
+			}
+			&_content {
+				font-size: 15px;
+				p {
+					margin: 5px 0;
+					&:first-child {
+						margin-top: 0;
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&_buttons {
+				display: flex;
+				justify-content: flex-end;
+				margin-top: auto;
+				font-size: 14px;
+				button {
+					padding: 5px 10px;
+					margin-right: 10px;
+					color: #fff;
+					border: none;
+					border-radius: 3px;
+					cursor: pointer;
+					&[data-action="costum"] {
+						background: #37373D;
+						&:hover {
+							background: #252526;
+						}
+						&:active {
+							background: #37373D;
+						}
+					}
+					&[data-action="accept"] {
+						background: #6A9955;
+						&:hover {
+							background: #438A55;
+						}
+						&:active {
+							background: #6A9955;
+						}
+					}
+					&[data-action="close"] {
+						background: #B23326;
+						&:hover {
+							background: #7B2526;
+						}
+						&:active {
+							background: #B23326;
+						}
+					}
+					&:last-child {
+						margin: 0;
+					}
+				}
+			} // .popup-window_buttons
+		}
+	} // .modal-popup_window
+}
