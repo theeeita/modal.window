@@ -13,7 +13,7 @@ const modalPopupWindow = ModalPopup(options); // Объект options описы
 #### Параметры (свойства объекта options):
   * **showOnStart**<br>
     Тип: `Boolean`<br>
-    Описание: Определяет показывать ли окно сразу после загрузки страницы.<br>
+    Описание: Определяет, показывать ли окно сразу после загрузки страницы.<br>
     Значение по умолчанию: `false`
   * **width**<br>
     Тип: `Number`<br>
@@ -21,7 +21,7 @@ const modalPopupWindow = ModalPopup(options); // Объект options описы
     Значение по умолчанию: `600`
   * **header**<br>
     Тип: `String`<br>
-    Описание: Указывает текст в заголовке окна<br>
+    Описание: Указывает текст в заголовке окна (тег h4)<br>
     Значение по умолчанию: `Untitled`
    * **content**<br>
     Тип: `String`<br>
