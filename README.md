@@ -27,7 +27,7 @@ const modalPopupWindow = ModalPopup(options); // Объект options описы
     Тип: `String`<br>
     Описание: HTML-код, который должен содержать основное содержимое окна.<br>
     Значение по умолчанию: `<p>Nothing here</p>`
-   * **delayBeforeClose**
+   * **delayBeforeClose**<br>
     Тип: `Number`<br>
     Описание: Определяет задержку в миллисекундах перед закрытием окна.<br>
     Значение по умолчанию: `200`
