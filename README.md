@@ -3,11 +3,14 @@
 Конструктор модальных pop-up окон. Учитывает ширину полосы прокрутки при ее скрытии и возвращении на место. Это *учебный* проект.
 
 #### Создание:
-```javascript
+```html
+
 <link rel="stylesheet" href="path_to_css/modal_popup.css">
 <script src="path_to_js/modal_popup.js"></script>
 
-const modalPopupWindow = ModalPopup(options); // Объект options описываетры окна.
+<script>
+ const modalPopupWindow = ModalPopup(options); // Объект options описываетры окна.
+</script>
 ```
 
 #### Параметры (свойства объекта options):
