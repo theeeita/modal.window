@@ -17,7 +17,7 @@ const modalPopupWindow = ModalPopup(options); // Объект options описы
     Значение по умолчанию: `false`
   * **width**<br>
     Тип: `Number`<br>
-    Описание: Задает общую ширину окна в px<br>
+    Описание: Задает общую ширину окна в `px`<br>
     Значение по умолчанию: `600`
   * **header**<br>
     Тип: `String`<br>
