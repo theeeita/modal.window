@@ -9,7 +9,7 @@
 <script src="path_to_js/modal_popup.js"></script>
 
 <script>
- const modalPopupWindow = ModalPopup(options); // Объект options описываетры окна.
+ const modalPopupWindow = ModalPopup(options); // Объект options описывает параметры окна.
 </script>
 ```
 
