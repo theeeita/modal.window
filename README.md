@@ -5,6 +5,7 @@
 #### Создание:
 ```html
 
+// Необходимые файлы (css подключать в head, js где угодно, главное до объявления объекта):
 <link rel="stylesheet" href="path_to_css/modal_popup.css">
 <script src="path_to_js/modal_popup.js"></script>
 
